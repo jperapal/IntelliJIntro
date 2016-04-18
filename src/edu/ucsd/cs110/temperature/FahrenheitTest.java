@@ -8,8 +8,7 @@ public class FahrenheitTest {
     public void testFahrenheit() {
         float value = 12.34f;
         Fahrenheit temp = new Fahrenheit(value);
-        assertTrue(true);
-        //assertEquals(value, temp.getValue(), delta);
+        assertEquals(value, temp.getValue(), delta);
     }
 
     @Test
@@ -19,36 +18,30 @@ public class FahrenheitTest {
         String string = temp.toString();
         String beginning = "" + value;
         String ending = " F";
-        assertTrue(true);
 // Verify the suffix of the formatted string
-        //assertTrue(string.startsWith(beginning));
+        assertTrue(string.startsWith(beginning));
 // Verify the prefix of the formatted string
-        //assertTrue(string.endsWith(ending));
+        assertTrue(string.endsWith(ending));
 // Verify the middle of the formatted string
         int endIndex = string.indexOf(ending);
 // (Hint: what is the length of the middle of the string?)
-        //assertTrue(string.substring(0, endIndex).equals(beginning));
+        assertTrue(string.substring(0, endIndex).equals(beginning));
     }
 
     @Test
     public void testFahrenheitToFahrenheit() {
         Fahrenheit temp = new Fahrenheit(32);
         Temperature convert = temp.toFahrenheit();
-        assertTrue(true);
-        //assertEquals(32, convert.getValue(), delta);
+        assertEquals(32, convert.getValue(), delta);
     }
 
     @Test
     public void testFahrenheitToCelsius() {
         Fahrenheit temp = new Fahrenheit(32);
         Temperature convert = temp.toCelsius();
-        assertTrue(true);
-        assertTrue(true);
-        //assertEquals(0, 0, delta);
-        //assertEquals(0, convert.getValue(), delta);
+        assertEquals(0, convert.getValue(), delta);
         temp = new Fahrenheit(212);
         convert = temp.toCelsius();
-        //assertEquals(0,0,delta);
-        //assertEquals(100, convert.getValue(), delta);
+        assertEquals(100, convert.getValue(), delta);
     }
 }
